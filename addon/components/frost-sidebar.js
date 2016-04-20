@@ -1,5 +1,15 @@
-import Ember from 'ember'
+import Ember from 'ember';
+import layout from './template';
 
 export default Ember.Component.extend({
-  classNames: ['frost-sidebar']
-})
+	layout: layout,
+	classNames: ['frost-sidebar'],
+	isOpen: false,
+
+	actions: {
+		toggleSidebar() {
+			this.toggleProperty("isOpen");
+		}
+
+	}
+});
