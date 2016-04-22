@@ -31,7 +31,12 @@ ember install ember-frost-sidebar
 
 ### Example
 ```handlebars
-Coming soon
+{{#frost-sidebar class=demo-instance}}
+    Test content
+    {{#frost-checkbox-array id=basic }}
+          {{#frost-checkbox id=basic_value-A value=A }}A{{/frost-checkbox}}
+      {{/frost-checkbox-array}}
+{{/frost-sidebar}}
 ```
 
 ## Development
