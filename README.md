@@ -28,8 +28,6 @@ ember install ember-frost-sidebar
 | ` ` | ` ` | ` ` | Coming soon |
 
 ## Examples
-
-### Example
 ```handlebars
 {{#frost-sidebar class=demo-instance}}
     Test content
