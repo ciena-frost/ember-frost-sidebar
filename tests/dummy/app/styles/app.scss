@@ -1,4 +1,5 @@
 @import 'node_modules/ember-frost-core/addon/styles/frost-theme';
+@import 'node_modules/ember-frost-core/addon/styles/z-index';
 
 .demo-content {
 	position: relative;
@@ -15,8 +16,7 @@
 	width: 80%;
 	max-width: 400px;
 	margin: auto;
-	//z-index: $z-index-notification;
-    z-index: 999;
+	z-index: $frost-z-index-notification;
 }
 
 .demo-pod-content {
