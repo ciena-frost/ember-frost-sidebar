@@ -1,16 +1,11 @@
-//@import 'node_modules/ember-frost-core/addon/styles/frost-theme';
-//@import 'node_modules/ember-frost-core/addon/styles/frost-app';
-//@import 'bourbon';
-//@import 'frost/variables';
-//@import 'frost/app';
-//@import 'frost/patterns';
+@import 'node_modules/ember-frost-core/addon/styles/frost-theme';
 
 .demo-content {
 	position: relative;
 	top: 50px;
 	margin: 10px;
 	height: calc(100% - 60px);
-	//background-color: rgba($frost-color-lgrey-1, 0.7);
+	background-color: rgba($frost-color-lgrey-1, 0.7);
 }
 
 .dummy-notification-container {
@@ -21,6 +16,7 @@
 	max-width: 400px;
 	margin: auto;
 	//z-index: $z-index-notification;
+    z-index: 999;
 }
 
 .demo-pod-content {
