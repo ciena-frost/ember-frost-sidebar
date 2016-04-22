@@ -1,5 +1,7 @@
-'use strict'
+'use strict';
 
-module.exports = function (/* environment, appConfig */) {
-  return { }
-}
+module.exports = function(/* environment, appConfig */) {
+	return {
+		podModulePrefix: 'frost-sidebar/pods'
+	};
+};

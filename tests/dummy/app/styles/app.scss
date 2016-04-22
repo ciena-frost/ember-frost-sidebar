@@ -1,12 +1,39 @@
-@import 'frost-core';
-@import 'frost-theme';
+//@import 'node_modules/ember-frost-core/addon/styles/frost-theme';
+//@import 'node_modules/ember-frost-core/addon/styles/frost-app';
+//@import 'bourbon';
+//@import 'frost/variables';
+//@import 'frost/app';
+//@import 'frost/patterns';
+
+.demo-content {
+	position: relative;
+	top: 50px;
+	margin: 10px;
+	height: calc(100% - 60px);
+	//background-color: rgba($frost-color-lgrey-1, 0.7);
+}
 
 .dummy-notification-container {
-  position: fixed;
-  top: 60px;
-  right: 10px;
-  z-index: 999;
-  width: 80%;
-  max-width: 400px;
-  margin: auto;
+	position: fixed;
+	top: 60px;
+	right: 10px;
+	width: 80%;
+	max-width: 400px;
+	margin: auto;
+	//z-index: $z-index-notification;
+}
+
+.demo-pod-content {
+	padding: 20px;
+}
+
+.demo-instance {
+	width: 350px;
+	height: 250px;
+}
+
+.frost-tabs.iframe {
+  .navigation {
+    display: none;
+  }
 }

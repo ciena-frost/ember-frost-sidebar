@@ -1,2 +1,32 @@
-frost-sidebar testbed
-{{frost-sidebar}}
+     {{#frost-tabs class=(if iframe 'iframe') on-change=(action 'tabSelected') selection=selectedTab}}
+  {{#frost-tab alias='Readme' id='readme'}}
+      <div id='content'>
+        {{#frost-docs 'frost-sidebar'}}
+          {{#frost-docs-api}}
+
+          {{/frost-docs-api}}
+
+          {{#frost-docs-examples}}
+            {{frost-docs-example general}}
+          {{/frost-docs-examples}}
+
+          {{#frost-docs-changelog}}
+            {{frost-docs-changelog-entry '1.0.0' "Initial version"}}
+            {{frost-docs-changelog-entry '1.1.0' "Upgrade to ember cli 1.13.13"}}
+          {{/frost-docs-changelog}}
+        {{/frost-docs}}
+      </div>
+  {{/frost-tab}}
+  {{#frost-tab alias='Demo' id='demo' }}
+      <h1>frost-sidebar testbed</h1>
+
+      {{#frost-sidebar class="demo-instance"}}
+          <div class="demo-pod-content">
+              <h4>Test content</h4>
+            {{#frost-checkbox-array id="basic" }}
+              {{#frost-checkbox id="basic_value-A" value="A" }}A{{/frost-checkbox}}
+            {{/frost-checkbox-array}}
+          </div>
+      {{/frost-sidebar}}
+  {{/frost-tab}}
+{{/frost-tabs}}

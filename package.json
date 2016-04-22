@@ -43,7 +43,10 @@
     "ember-truth-helpers": "^1.2.0",
     "eslint": "^2.1.0",
     "eslint-config-frost-standard": "^1.0.0",
-    "ember-frost-css-core": "^1.0.0"
+    "ember-frost-css-core": "^1.0.0",
+    "frost-checkbox-array": "~1.1.0",
+    "frost-docs": "~1.1.0",
+    "frost-tabs": "~2.1.0"
   },
   "keywords": [
     "ember-addon",
@@ -55,7 +58,10 @@
     "ember-cli-htmlbars": "^1.0.1",
     "ember-cli-sass": "^5.2.0",
     "ember-frost-theme": "^1.0.1",
-    "liquid-fire": "^0.22.0"
+    "liquid-fire": "^0.22.0",
+    "ember-cli-sass": "5.1.0",
+    "frost-css": "~1.1.0",
+    "frost-svg": "~1.1.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

@@ -1,2 +1,5 @@
-@import 'node_modules/ember-frost-core/addon/styles/frost-theme';
-@import 'node_modules/ember-frost-core/addon/styles/frost-app';
+//@import 'node_modules/ember-frost-core/addon/styles/frost-theme';
+//@import 'node_modules/ember-frost-core/addon/styles/frost-app';
+@import 'bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import 'node_modules/frost-css/styles/frost/variables';
+@import './frost-sidebar';
