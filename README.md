@@ -20,19 +20,10 @@
 ```
 ember install ember-frost-sidebar
 ```
+## Components
+The following components are available when you install ember-frost-core
 
-## API
-
-| Attribute | Type | Value | Description |
-| --------- | ---- | ----- | ----------- |
-| ` ` | ` ` | ` ` | Coming soon |
-
-## Examples
-
-### Example
-```handlebars
-Coming soon
-```
+* [frost-sidebar](frost-sidebar.md)
 
 ## Development
 ### Setup
