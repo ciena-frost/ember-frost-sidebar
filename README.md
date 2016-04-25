@@ -11,31 +11,19 @@
 
 # ember-frost-sidebar
 
- * [Installation](#Installation)
- * [API](#API)
- * [Examples](#Examples)
- * [Contributing](#Contributing)
+ * [Installation](#installation)
+ * [Components](#components)
+ * [Development](#development)
+ * [Testing](#testing)
 
 ## Installation
 ```
 ember install ember-frost-sidebar
 ```
+## Components
+The following components are available when you install ember-frost-sidebar
 
-## API
-
-| Attribute | Type | Value | Description |
-| --------- | ---- | ----- | ----------- |
-| ` ` | ` ` | ` ` | Coming soon |
-
-## Examples
-```handlebars
-{{#frost-sidebar class=demo-instance}}
-    Test content
-    {{#frost-checkbox-array id=basic }}
-          {{#frost-checkbox id=basic_value-A value=A }}A{{/frost-checkbox}}
-      {{/frost-checkbox-array}}
-{{/frost-sidebar}}
-```
+* [frost-sidebar](frost-sidebar.md)
 
 ## Development
 ### Setup
