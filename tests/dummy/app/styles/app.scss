@@ -1,5 +1,5 @@
 @import 'node_modules/ember-frost-core/addon/styles/frost-theme';
-@import 'node_modules/ember-frost-core/addon/styles/z-index';
+@import 'node_modules/ember-frost-core/addon/styles/frost-app';
 
 .demo-content {
 	position: relative;
@@ -26,10 +26,4 @@
 .demo-instance {
 	width: 350px;
 	height: 250px;
-}
-
-.frost-tabs.iframe {
-  .navigation {
-    display: none;
-  }
 }

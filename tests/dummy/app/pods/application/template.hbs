@@ -1,15 +1,10 @@
-<!--<div class="demo-application">-->
-    <div class="frost-application-bar">
-		{{frost-svg path="frost/icebreaker" class="branding"}}
-    </div>
+<div class="frost-application-bar">
+  </div>
     <div class="demo-content">
-        <div class="dummy-notification-container">
-			{{#each notifications as |notification|}}
-				{{notification-message notification=notification}}
-			{{/each}}
-        </div>
-
-		{{outlet}}
-
-    </div>
-<!--</div>-->
+      <div class="dummy-notification-container">
+		{{#each notifications as |notification|}}
+		  {{notification-message notification=notification}}
+		{{/each}}
+      </div>
+      {{outlet}}
+</div>

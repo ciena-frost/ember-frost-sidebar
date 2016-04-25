@@ -33,7 +33,7 @@
     "ember-data": "~2.3.0",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
-    "ember-frost-core": "0.5.2",
+    "ember-frost-core": ">=0.5.2 <2.0.0",
     "ember-load-initializers": "^0.5.0",
     "ember-one-way-controls": "0.6.3",
     "ember-resolver": "^2.0.3",
@@ -44,11 +44,8 @@
     "ember-cli-notifications": "^3.2.0",
     "ember-lodash": "~0.0.6",
     "ember-truth-helpers": "^1.2.0",
-    "eslint": "2.2.0",
-    "eslint-config-frost-standard": "^1.0.0",
-    "frost-checkbox-array": "~1.1.0",
-    "frost-docs": "~1.1.0",
-    "frost-tabs": "~2.1.0"
+    "eslint": "2.8.0",
+    "eslint-config-frost-standard": "^2.0.0"
   },
   "keywords": [
     "ember-addon",
@@ -60,8 +57,7 @@
     "ember-cli-htmlbars": "^1.0.1",
     "ember-frost-theme": "^1.0.1",
     "liquid-fire": "^0.22.0",
-    "ember-cli-sass": "^5.2.0",
-    "frost-svg": "~1.1.0"
+    "ember-cli-sass": "^5.2.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

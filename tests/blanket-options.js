@@ -10,10 +10,10 @@ var options = {
     reporters: ['json'],
     autostart: true
   }
-};
+}
 
 if (typeof exports === 'undefined') {
-  blanket.options(options);
+  blanket.options(options)
 } else {
-  module.exports = options;
+  module.exports = options
 }

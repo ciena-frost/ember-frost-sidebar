@@ -5,13 +5,13 @@
         </div>
 
         <div class="tab tab-open" {{action (action 'toggleSidebar')}}>
-			{{frost-svg class="icon" path="frost/sidebar-layer-open"}}
+			{{frost-icon class="icon" icon="frost/sidebar-layer-open"}}
         </div>
     </div>
 {{else}}
     <div class="closed-container">
         <div class="tab" {{action (action 'toggleSidebar')}}>
-			{{frost-svg class="icon" path="frost/sidebar-layer-normal"}}
+			{{frost-icon class="icon" icon="frost/sidebar-layer-normal"}}
         </div>
     </div>
 {{/liquid-if}}
