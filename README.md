@@ -11,10 +11,10 @@
 
 # ember-frost-sidebar
 
- * [Installation](#Installation)
- * [API](#API)
- * [Examples](#Examples)
- * [Contributing](#Contributing)
+ * [Installation](#installation)
+ * [Components](#components)
+ * [Development](#development)
+ * [Testing](#testing)
 
 ## Installation
 ```
