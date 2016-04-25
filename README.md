@@ -21,7 +21,7 @@
 ember install ember-frost-sidebar
 ```
 ## Components
-The following components are available when you install ember-frost-core
+The following components are available when you install ember-frost-sidebar
 
 * [frost-sidebar](frost-sidebar.md)
 
