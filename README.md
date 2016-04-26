@@ -7,23 +7,23 @@
 [npm-img]: https://img.shields.io/npm/v/ember-frost-sidebar.svg "NPM Version"
 [npm-url]: https://www.npmjs.com/package/ember-frost-sidebar
 
-[![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url]
+# ember-frost-sidebar <br /> [![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url]
 
-# ember-frost-sidebar
 
- * [Installation](#installation)
- * [Components](#components)
- * [Development](#development)
- * [Testing](#testing)
+ * [Installation](#Installation)
+ * [API](#API)
+ * [Examples](#Examples)
+ * [Contributing](#Contributing)
 
 ## Installation
 ```
 ember install ember-frost-sidebar
 ```
-## Components
-The following components are available when you install ember-frost-sidebar
+## API
+Coming soon
 
-* [frost-sidebar](frost-sidebar.md)
+## Examples
+Coming soon
 
 ## Development
 ### Setup
