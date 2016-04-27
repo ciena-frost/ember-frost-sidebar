@@ -10,15 +10,15 @@ var options = {
     lcovOptions: {
       outputFile: 'coverage/lcov.info',
       renamer: function (fileName) {
-        return fileName.replace('ember-frost-sidebar', 'addon') + '.js' 
+        return fileName.replace('ember-frost-sidebar', 'addon') + '.js'
       }
     },
     reporters: ['lcov', 'json'],
     autostart: true
   }
-};
+}
 if (typeof exports === 'undefined') {
-  blanket.options(options);
+  blanket.options(options)
 } else {
-  module.exports = options;
+  module.exports = options
 }
