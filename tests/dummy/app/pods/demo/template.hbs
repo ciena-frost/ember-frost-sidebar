@@ -1,9 +1,39 @@
-  <h1>frost-sidebar testbed</h1>
-
+<div class="demo-instance" >
+  <h1>Sidebar</h1>
       {{#frost-sidebar class="demo-instance"}}
           <div class="demo-pod-content">
               <h4>Test content</h4>
             {{frost-checkbox  checked=true label="Check me"}}
           </div>
       {{/frost-sidebar}}
+</div>
 
+<div class="demo-instance">
+  <h1>Sidebar with horizontal scrollbar</h1>
+      {{#frost-sidebar class="demo-instance"}}
+          <div class="demo-pod-content">
+              <h4>horrizooooooooooooooooooooooooooooooooontal scroll bar</h4>
+            {{frost-checkbox  checked=true label="Check me"}}
+          </div>
+      {{/frost-sidebar}}
+</div>
+
+<div class="demo-instance">
+  <h1>Sidebar with vertical scrollbar</h1>
+      {{#frost-sidebar class="demo-instance"}}
+          <div class="demo-pod-content">
+            <h4>vertical scroll bar</h4>
+            <h4>v</h4>
+            <h4>e</h4>
+            <h4>r</h4>
+            <h4>t</h4>
+            <h4>i</h4>
+            <h4>c</h4>
+            <h4>a</h4>
+            <h4>l</h4>
+            {{frost-checkbox  checked=true label="Check me"}}
+          </div>
+      {{/frost-sidebar}}
+</div>
+
+{{outlet}}

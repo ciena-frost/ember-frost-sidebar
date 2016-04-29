@@ -34,6 +34,7 @@
 	background-color: rgba($frost-color-white, 0.95);
 	box-shadow: 1px 3px 15px $frost-color-grey-5;
 	z-index: $frost-z-index-application-bar;
+    overflow: auto;
 }
 
 .frost-sidebar .tab {
