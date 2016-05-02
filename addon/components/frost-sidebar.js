@@ -10,6 +10,5 @@ export default Ember.Component.extend({
     toggleSidebar () {
       this.toggleProperty('isOpen')
     }
-
   }
 })

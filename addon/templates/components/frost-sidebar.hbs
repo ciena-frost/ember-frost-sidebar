@@ -1,17 +1,17 @@
 {{#liquid-if isOpen class="container" }}
-    <div class="open-container">
-        <div class="pod">
-			{{yield}}
-        </div>
+  <div class="open-container">
+    <div class="pod">
+      {{yield}}
+    </div>
 
-        <div class="tab tab-open" {{action (action 'toggleSidebar')}}>
-			{{frost-icon class="icon" icon="frost/sidebar-layer-open"}}
-        </div>
+    <div class="tab tab-open" {{action (action 'toggleSidebar')}}>
+      {{frost-icon class="icon" icon="frost/sidebar-layer-open"}}
     </div>
+  </div>
 {{else}}
-    <div class="closed-container">
-        <div class="tab" {{action (action 'toggleSidebar')}}>
-			{{frost-icon class="icon" icon="frost/sidebar-layer-normal"}}
-        </div>
+  <div class="closed-container">
+    <div class="tab" {{action (action 'toggleSidebar')}}>
+      {{frost-icon class="icon" icon="frost/sidebar-layer-normal"}}
     </div>
+  </div>
 {{/liquid-if}}
