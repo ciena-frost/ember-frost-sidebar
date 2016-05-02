@@ -2,28 +2,28 @@
 @import 'node_modules/ember-frost-core/addon/styles/frost-app';
 
 .demo-content {
-	position: relative;
-	top: 50px;
-	margin: 10px;
-	height: calc(100% - 60px);
-	background-color: rgba($frost-color-lgrey-1, 0.7);
+  position: relative;
+  top: 50px;
+  margin: 10px;
+  height: calc(100% - 60px);
+  background-color: rgba($frost-color-lgrey-1, 0.7);
 }
 
 .dummy-notification-container {
-	position: fixed;
-	top: 60px;
-	right: 10px;
-	width: 80%;
-	max-width: 400px;
-	margin: auto;
-	z-index: $frost-z-index-notification;
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  width: 80%;
+  max-width: 400px;
+  margin: auto;
+  z-index: $frost-z-index-notification;
 }
 
 .demo-pod-content {
-	padding: 20px;
+  padding: 20px;
 }
 
 .demo-instance {
-	width: 350px;
-	height: 250px;
+  width: 350px;
+  height: 250px;
 }

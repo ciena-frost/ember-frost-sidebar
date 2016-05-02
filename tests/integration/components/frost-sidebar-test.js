@@ -2,8 +2,8 @@
 import Ember from 'ember'
 import { expect, assert } from 'chai'
 import {
-	describeComponent,
-	it
+  describeComponent,
+  it
 } from 'ember-mocha'
 import hbs from 'htmlbars-inline-precompile'
 
