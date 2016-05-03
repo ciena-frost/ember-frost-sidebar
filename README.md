@@ -20,7 +20,7 @@
 ember install ember-frost-sidebar
 ```
 ## API
-Not appliable at the moment.
+Not applicable at the moment.
 
 ## Examples
 ```
