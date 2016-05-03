@@ -20,10 +20,17 @@
 ember install ember-frost-sidebar
 ```
 ## API
-Coming soon
+Not applicable at the moment.
 
 ## Examples
-Coming soon
+```
+{{#frost-sidebar class="demo-instance"}}
+  <div class="demo-pod-content">
+    <h4>Test content</h4>
+    {{frost-checkbox  checked=true label="Check me"}}
+  </div>
+{{/frost-sidebar}}
+```
 
 ## Development
 ### Setup
