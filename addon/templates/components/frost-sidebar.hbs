@@ -1,9 +1,12 @@
 {{#liquid-if isOpen class="container" }}
   <div class="open-container">
     <div class="pod">
-      {{yield}}
+      {{#frost-scroll}}
+        <div class="pod-content">
+          {{yield}}
+        </div>
+      {{/frost-scroll}}
     </div>
-
     <div class="tab tab-open" {{action (action 'toggleSidebar')}}>
       {{frost-icon class="icon" icon="frost/sidebar-layer-open"}}
     </div>

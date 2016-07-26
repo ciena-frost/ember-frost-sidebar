@@ -19,11 +19,32 @@
   }
 
   .pod {
-    padding: 25px;
-    // Value of '1' below hides the content behind this pod completely.
-    background-color: rgba($frost-color-white, 1);
+    padding: 5px;
+    background-color: $frost-color-white;
     box-shadow: 1px 3px 15px $frost-color-grey-5;
-    z-index: $frost-z-index-application-bar;
+    z-index: $frost-z-index-modal;
+
+    // Kick in the scroll bar after these max height and widths
+    // of the pod.
+    .frost-scroll {
+      max-height: 550px;
+      max-width: 330px;
+      .pod-content {
+        padding: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px
+      }
+
+      .ps-scrollbar-x-rail{
+        background-color: $frost-color-white;
+        position:relative;
+      }
+
+      .ps-scrollbar-y-rail{
+        background-color: $frost-color-white;
+        position:absolute;
+      }
+    }
   }
 
   .tab {
@@ -34,7 +55,7 @@
     cursor: pointer;
     box-shadow: 1px 2px 5px $frost-color-grey-5;
     background-color: $frost-color-white;
-    z-index: $frost-z-index-application-bar;
+    z-index: $frost-z-index-modal;
 
     .icon {
       width: 50px;
@@ -46,6 +67,7 @@
     background-color: $frost-color-night-3;
   }
 }
+
 .frost-sidebar .tab:hover:not(.tab-open) {
   padding-left: 10px;
   width: 65px;
