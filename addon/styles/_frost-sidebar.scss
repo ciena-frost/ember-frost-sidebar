@@ -1,62 +1,74 @@
-.frost-sidebar .container {
-  width: 100%;
-  height: 100%;
-}
-
 .frost-sidebar {
   position: absolute;
-  left: 0;
-}
+  left: 0px;
 
-.frost-sidebar .liquid-container > .liquid-child {
-  width: 100%;
-  height: 100%;
-}
+  .liquid-container > .liquid-child {
+    width: auto;
+    height: auto;
+  }
 
-.frost-sidebar .open-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  min-width: 200px;
-  min-height: 155px;
-  width: 100%;
-  height: 100%;
-}
+  .open-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 
-.frost-sidebar .closed-container {
-  width: 70px;
-  height: 65px;
-}
+  .closed-container {
+    width: 70px;
+    height: 65px;
+  }
 
-.frost-sidebar .pod {
-  height: calc(100% - 8px);
-  width: calc(100% - 58px);
-  background-color: rgba($frost-color-white, 0.95);
-  box-shadow: 1px 3px 15px $frost-color-grey-5;
-  z-index: $frost-z-index-application-bar;
-  overflow: auto;
-}
+  .pod {
+    padding: 5px;
+    background-color: $frost-color-white;
+    box-shadow: 1px 3px 15px $frost-color-grey-5;
+    z-index: $frost-z-index-modal;
 
-.frost-sidebar .tab {
-  width: 55px;
-  height: 60px;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: 1px 2px 5px $frost-color-grey-5;
-  background-color: $frost-color-white;
-  z-index: $frost-z-index-application-bar;
-}
+    // Kick in the scroll bar after these max height and widths
+    // of the pod.
+    .frost-scroll {
+      max-height: 550px;
+      max-width: 330px;
+      .pod-content {
+        padding: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px
+      }
 
-.frost-sidebar .tab-open {
-  background-color: $frost-color-night-3;
+      .ps-scrollbar-x-rail{
+        background-color: $frost-color-white;
+        position:relative;
+      }
+
+      .ps-scrollbar-y-rail{
+        background-color: $frost-color-white;
+        position:absolute;
+      }
+    }
+  }
+
+  .tab {
+    padding-top: 6px;
+    width: 55px;
+    height: 60px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 1px 2px 5px $frost-color-grey-5;
+    background-color: $frost-color-white;
+    z-index: $frost-z-index-modal;
+
+    .icon {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .tab-open {
+    background-color: $frost-color-night-3;
+  }
 }
 
 .frost-sidebar .tab:hover:not(.tab-open) {
   padding-left: 10px;
-}
-
-.frost-sidebar .tab .icon {
-  padding: 7px;
-  width: 45px;
-  height: 45px;
+  width: 65px;
 }
