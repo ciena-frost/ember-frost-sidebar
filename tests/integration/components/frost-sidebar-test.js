@@ -18,21 +18,19 @@ describeComponent(
   function () {
     it('renders', function () {
       this.render(hbs`
-        {{#frost-sidebar class="demo-instance"}}
-          <div class="demo-pod-content">
-            demo
-          </div>
-        {{/frost-sidebar}}`)
+        {{frost-sidebar
+          class="demo-instance"
+          content=(component 'simple-sidebar-content')
+        }}`)
       expect($hook('frost-sidebar-close')).to.have.length(1)
     })
 
     it('renders and can open sidebar', function () {
       this.render(hbs`
-        {{#frost-sidebar class="demo-instance"}}
-          <div class="demo-pod-content">
-            demo
-          </div>
-        {{/frost-sidebar}}`)
+        {{frost-sidebar
+          class="demo-instance"
+          content=(component 'simple-sidebar-content')
+        }}`)
       expect($hook('frost-sidebar-close')).to.have.length(1)
       Ember.run(() => this.$('.closed-container svg').click())
       expect($hook('frost-sidebar-open')).to.have.length(1)

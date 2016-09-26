@@ -1,19 +1,19 @@
-{{#liquid-if isOpen class="container"}}
-  <div class="open-container" data-test={{hook (concat hookName '-open')}}>
+{{#liquid-if isOpen}}
+  <div class="open" data-test={{hook (concat hookName '-open')}}>
     <div class="pod">
       {{#frost-scroll}}
         <div class="pod-content">
-          {{yield}}
+          {{component content}}
         </div>
       {{/frost-scroll}}
     </div>
-    <div class="tab tab-open" {{action (action 'toggleSidebar')}}>
+    <div class="tab tab-open" {{action '_onToggle'}}>
       {{frost-icon class="icon" icon="frost/sidebar-layer-open"}}
     </div>
   </div>
 {{else}}
-  <div class="closed-container" data-test={{hook (concat hookName '-close')}}>
-    <div class="tab" {{action (action 'toggleSidebar')}}>
+  <div class="closed" data-test={{hook (concat hookName '-close')}}>
+    <div class="tab" {{action '_onToggle'}}>
       {{frost-icon class="icon" icon="frost/sidebar-layer-normal"}}
     </div>
   </div>
