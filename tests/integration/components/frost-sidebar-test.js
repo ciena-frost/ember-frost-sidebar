@@ -5,6 +5,9 @@ import {
   it
 } from 'ember-mocha'
 import hbs from 'htmlbars-inline-precompile'
+import {
+  $hook
+} from 'ember-hook'
 
 describeComponent(
   'frost-sidebar',
@@ -20,7 +23,7 @@ describeComponent(
             demo
           </div>
         {{/frost-sidebar}}`)
-      expect(this.$()).to.have.length(1)
+      expect($hook('frost-sidebar-close')).to.have.length(1)
     })
 
     it('renders and can open sidebar', function () {
@@ -30,10 +33,9 @@ describeComponent(
             demo
           </div>
         {{/frost-sidebar}}`)
-      expect(this.$('.demo-pod-content')).to.have.length(0)
+      expect($hook('frost-sidebar-close')).to.have.length(1)
       Ember.run(() => this.$('.closed-container svg').click())
-      expect(this.$('.demo-pod-content')).to.have.length(1)
-      expect(this.$('.open-container')).to.have.length(1)
+      expect($hook('frost-sidebar-open')).to.have.length(1)
     })
   }
 )

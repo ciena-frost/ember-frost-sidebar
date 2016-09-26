@@ -1,5 +1,5 @@
-{{#liquid-if isOpen class="container" }}
-  <div class="open-container">
+{{#liquid-if isOpen class="container"}}
+  <div class="open-container" data-test={{hook (concat hookName '-open')}}>
     <div class="pod">
       {{#frost-scroll}}
         <div class="pod-content">
@@ -12,7 +12,7 @@
     </div>
   </div>
 {{else}}
-  <div class="closed-container">
+  <div class="closed-container" data-test={{hook (concat hookName '-close')}}>
     <div class="tab" {{action (action 'toggleSidebar')}}>
       {{frost-icon class="icon" icon="frost/sidebar-layer-normal"}}
     </div>
