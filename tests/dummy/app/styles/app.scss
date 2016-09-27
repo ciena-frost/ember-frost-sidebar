@@ -4,9 +4,9 @@
 .demo-content {
   position: relative;
   top: 50px;
-  margin: 10px;
   height: calc(100% - 60px);
-  background-color: rgba($frost-color-lgrey-1, 0.7);
+  margin: 10px;
+  background-color: $frost-color-lgrey-1, .7;
 }
 
 .dummy-notification-container {

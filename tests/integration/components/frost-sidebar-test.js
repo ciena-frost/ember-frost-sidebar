@@ -20,7 +20,7 @@ describeComponent(
       this.render(hbs`
         {{frost-sidebar
           class="demo-instance"
-          content=(component 'simple-sidebar-content')
+          content=(component 'simple-content' text='test')
         }}`)
       expect($hook('frost-sidebar-close')).to.have.length(1)
     })
@@ -29,10 +29,10 @@ describeComponent(
       this.render(hbs`
         {{frost-sidebar
           class="demo-instance"
-          content=(component 'simple-sidebar-content')
+          content=(component 'simple-content' text='test')
         }}`)
       expect($hook('frost-sidebar-close')).to.have.length(1)
-      Ember.run(() => this.$('.closed-container svg').click())
+      Ember.run(() => this.$('.frost-sidebar-closed svg').click())
       expect($hook('frost-sidebar-open')).to.have.length(1)
     })
   }

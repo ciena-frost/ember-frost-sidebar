@@ -8,7 +8,7 @@ import {
   task,
   timeout
 } from 'ember-concurrency'
-import layout from './template';
+import layout from './template'
 
 export default Component.extend({
   layout,
