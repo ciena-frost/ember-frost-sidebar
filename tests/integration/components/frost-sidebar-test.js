@@ -16,24 +16,33 @@ describeComponent(
     integration: true
   },
   function () {
-    it('renders', function () {
+    it('renders closed sidebar', function (done) {
       this.render(hbs`
         {{frost-sidebar
-          class="demo-instance"
-          content=(component 'simple-content' text='test')
+          content=(component 'simple-content' texts=test)
         }}`)
       expect($hook('frost-sidebar-close')).to.have.length(1)
+
+      return capture('frost-sidebar-closed', done, {
+        targetElement: $hook('frost-sidebar-close')[0],
+        experimentalSvgs: true
+      })
     })
 
-    it('renders and can open sidebar', function () {
+    it('renders opened sidebar', function (done) {
+      this.setProperties({
+        isOpen: true
+      })
       this.render(hbs`
         {{frost-sidebar
-          class="demo-instance"
+          isOpen=isOpen
           content=(component 'simple-content' text='test')
         }}`)
-      expect($hook('frost-sidebar-close')).to.have.length(1)
-      Ember.run(() => this.$('.frost-sidebar-closed svg').click())
-      expect($hook('frost-sidebar-open')).to.have.length(1)
+
+      return capture('frost-sidebar-opened', done, {
+        targetElement: $hook('frost-sidebar-done')[0],
+        experimentalSvgs: true
+      })
     })
   }
 )

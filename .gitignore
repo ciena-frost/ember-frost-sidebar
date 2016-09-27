@@ -17,3 +17,4 @@ testem.log
 coverage.json
 /typings
 /coverage
+/visual-acceptance
