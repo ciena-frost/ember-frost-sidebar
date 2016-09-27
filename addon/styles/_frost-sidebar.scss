@@ -32,16 +32,6 @@
       max-width: 300px;
       max-height: 200px;
     }
-
-    .ps-scrollbar-x-rail {
-      position: relative;
-      background-color: $frost-color-white;
-    }
-
-    .ps-scrollbar-y-rail {
-      position: absolute;
-      background-color: $frost-color-white;
-    }
   }
 
   &-content {
@@ -66,7 +56,7 @@
     }
 
     &:hover {
-      &:not(&-open) {
+      &:not(.frost-sidebar-tab-open) {
         width: 50px;
         padding-left: 10px;
       }
