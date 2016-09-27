@@ -21,10 +21,9 @@ describeComponent(
         {{frost-sidebar
           content=(component 'simple-content' texts=test)
         }}`)
-      expect($hook('frost-sidebar-close')).to.have.length(1)
 
-      return capture('frost-sidebar-closed', done, {
-        targetElement: $hook('frost-sidebar-close')[0],
+      return capture('sidebar-closed', done, {
+        targetElement: $hook('sidebar')[0],
         experimentalSvgs: true
       })
     })
@@ -39,8 +38,8 @@ describeComponent(
           content=(component 'simple-content' text='test')
         }}`)
 
-      return capture('frost-sidebar-opened', done, {
-        targetElement: $hook('frost-sidebar-done')[0],
+      return capture('sidebar-opened', done, {
+        targetElement: $hook('sidebar')[0],
         experimentalSvgs: true
       })
     })

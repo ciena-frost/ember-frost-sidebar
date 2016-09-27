@@ -1,19 +1,19 @@
 {{#liquid-if isOpen}}
-  <div class="frost-sidebar-open" data-test={{hook (concat hookName '-open')}}>
+  <div class="frost-sidebar-open" data-test={{hook (concat hook 'sidebar')}}>
     <div class="frost-sidebar-content-container">
       {{#frost-scroll}}
-        <div class="frost-sidebar-content">
+        <div class="frost-sidebar-content" data-test={{hook (concat hook 'sidebar-content')}}>
           {{component content}}
         </div>
       {{/frost-scroll}}
     </div>
-    <div class="frost-sidebar-tab frost-sidebar-tab-open" {{action '_onToggle'}}>
+    <div class="frost-sidebar-tab frost-sidebar-tab-open" {{action '_onToggle'}} data-test={{hook (concat hook 'sidebar--tab')}}>
       {{frost-icon class="frost-sidebar-tab-icon" icon="frost/sidebar-layer-open"}}
     </div>
   </div>
 {{else}}
-  <div class="frost-sidebar-closed" data-test={{hook (concat hookName '-close')}}>
-    <div class="frost-sidebar-tab" {{action '_onToggle'}}>
+  <div class="frost-sidebar-closed" data-test={{hook (concat hook 'sidebar')}}>
+    <div class="frost-sidebar-tab" {{action '_onToggle'}} data-test={{hook (concat hook 'sidebar--tab')}}>
       {{frost-icon class="frost-sidebar-tab-icon" icon="frost/sidebar-layer-normal"}}
     </div>
   </div>

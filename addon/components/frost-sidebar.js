@@ -12,11 +12,12 @@ export default Component.extend(PropTypesMixin, {
   // == State properties ======================================================
   propTypes: {
     // Options
+    isOpen: PropTypes.bool,
+    hook: PropTypes.string,
     content: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.EmberObject
-    ]),
-    isOpen: PropTypes.bool,
+    ]).isRequired,
 
     // Actions
     onToggle: PropTypes.func,
@@ -29,7 +30,6 @@ export default Component.extend(PropTypesMixin, {
       isOpen: false
     }
   },
-  hookName: 'frost-sidebar',
 
   // == Events ================================================================
   _onOpen () {
