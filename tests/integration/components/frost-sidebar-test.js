@@ -1,5 +1,3 @@
-import Ember from 'ember'
-import { expect } from 'chai'
 import {
   describeComponent,
   it
