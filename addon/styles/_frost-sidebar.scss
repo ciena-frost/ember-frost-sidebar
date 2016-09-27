@@ -1,6 +1,9 @@
 .frost-sidebar {
   position: absolute;
   left: 0px;
+  max-width: 350px;
+  min-height: 100px;
+  max-height: 250px;
 
   .liquid-container > .liquid-child {
     width: auto;
@@ -27,8 +30,8 @@
     z-index: $frost-z-index-modal;
 
     .frost-scroll {
-      max-height: 550px;
-      max-width: 330px;
+      max-height: 200px;
+      max-width: 300px;
     }
 
     .ps-scrollbar-x-rail{
@@ -44,7 +47,6 @@
 
   &-content {
     padding: 20px;
-    max-width: 250px;
     margin-right: 0px;
     margin-bottom: 0px;
   }

@@ -3,6 +3,7 @@ const { Component } = Ember
 import layout from '../templates/components/frost-sidebar'
 import PropTypesMixin, { PropTypes } from 'ember-prop-types'
 
+// TODO: horizontal and vertical scroll should be able to work together.
 export default Component.extend(PropTypesMixin, {
   // == Component properties ==================================================
   layout: layout,

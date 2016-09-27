@@ -12,7 +12,7 @@
 </div>
 
 <div class="demo-instance">
-  <h3>Sidebar with content expands horizontally beyond default 330px triggers scroll bar</h3>
+  <h3>Sidebar with content expands horizontally triggers scroll bar</h3>
   {{frost-sidebar
     class="demo-instance"
     content=(component 'simple-content' texts=largerHorizontalContent)}}
@@ -25,8 +25,15 @@
     content=(component 'simple-content' texts=verticalContent)}}
 </div>
 <div class="demo-instance">
-  <h3>Sidebar with content expands vertically beyond default 550px triggers scroll bar</h3>
+  <h3>Sidebar with content expands vertically triggers scroll bar</h3>
   {{frost-sidebar
     class="demo-instance"
     content=(component 'simple-content' texts=largerVerticalContent)}}
 </div>
+<div class="demo-instance">
+  <h3>Sidebar with content expands vertically and horizontally triggers scroll bar</h3>
+  {{frost-sidebar
+    class="demo-instance"
+    content=(component 'simple-content' texts=largerHorizontalNVerticalContent)}}
+</div>
+{{dynamic-updates}}
