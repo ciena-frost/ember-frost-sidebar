@@ -1,6 +1,6 @@
 module.exports = {
   coverageEnvVar: 'COVERAGE',
-  coverageFolder: 'coverage',
+  coverageFolder: '/coverage',
   excludes: [
     '**/mirage/**/*',
     '**/dummy/**/*'

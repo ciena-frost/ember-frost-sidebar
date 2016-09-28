@@ -1,4 +1,4 @@
-{{#if isOpen}}
+{{#liquid-if isOpen}}
   <div class="frost-sidebar-open" data-test={{hook (concat hook '-sidebar')}}>
     <div class="frost-sidebar-content-container">
       {{#frost-scroll}}
@@ -17,4 +17,4 @@
       {{frost-icon class="frost-sidebar-tab-icon" icon="frost/sidebar-layer-normal"}}
     </div>
   </div>
-{{/if}}
+{{/liquid-if}}
