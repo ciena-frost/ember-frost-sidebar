@@ -1,6 +1,5 @@
-<div class="demo-pod-content">
-  {{#each texts as |text|}}
-    <h4>{{text}}</h4>
-  {{/each}}
-  {{frost-checkbox  checked=true label="Check me"}}
-</div>
+{{! BEGIN-SNIPPET simple-content }}
+{{#each sentences as |sentence|}}
+  <h4>{{sentence}}</h4>
+{{/each}}
+{{! END-SNIPPET }}

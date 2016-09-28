@@ -11,7 +11,7 @@ export default Component.extend(PropTypesMixin, {
   // == State properties ======================================================
   propTypes: {
     // Options
-    isOpen: PropTypes.bool,
+    isOpen: PropTypes.bool.isRequired,
     hook: PropTypes.string,
     content: PropTypes.oneOfType([
       PropTypes.object,
@@ -19,45 +19,6 @@ export default Component.extend(PropTypesMixin, {
     ]).isRequired,
 
     // Actions
-    onToggle: PropTypes.func,
-    onClose: PropTypes.func,
-    onOpen: PropTypes.func
-  },
-
-  getDefaultProps () {
-    return {
-      isOpen: false
-    }
-  },
-
-  // == Events ================================================================
-  _onOpen () {
-    const onOpen = this.get('onOpen')
-    if (onOpen) {
-      onOpen()
-    }
-  },
-  _onClose () {
-    const onClose = this.get('onClose')
-    if (onClose) {
-      onClose()
-    }
-  },
-
-  // == Actions ===============================================================
-  actions: {
-    _onToggle () {
-      if (this.get('isOpen')) {
-        this._onClose()
-      } else {
-        this._onOpen()
-      }
-
-      this.toggleProperty('isOpen')
-      const onToggle = this.get('onToggle')
-      if (onToggle) {
-        onToggle()
-      }
-    }
+    onToggle: PropTypes.func.isRequired
   }
 })

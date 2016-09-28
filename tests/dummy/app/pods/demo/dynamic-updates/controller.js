@@ -1,7 +1,7 @@
 import Ember from 'ember'
 const {
   A,
-  Component,
+  Controller,
   Object: EmberObject
 } = Ember
 import {
@@ -10,9 +10,10 @@ import {
 } from 'ember-concurrency'
 import layout from './template'
 
-export default Component.extend({
+export default Controller.extend({
   layout,
   incrementors: A([]),
+  isOpen: false,
 
   speedTask: task(function * () {
     const incrementors = this.get('incrementors')
@@ -36,14 +37,23 @@ export default Component.extend({
     }))
   }).drop(),
 
-  actions: {
-    stopSpeeding () {
-      this.get('speedTask').cancelAll()
-      this.get('incrementors').clear()
-    },
+  stopSpeeding () {
+    this.get('speedTask').cancelAll()
+    this.get('incrementors').clear()
+  },
 
-    startSpeeding () {
-      this.get('speedTask').perform()
+  startSpeeding () {
+    this.get('speedTask').perform()
+  },
+
+  actions: {
+    toggle () {
+      if (this.get('isOpen')) {
+        this.stopSpeeding()
+      } else {
+        this.startSpeeding()
+      }
+      this.toggleProperty('isOpen')
     }
   }
 })

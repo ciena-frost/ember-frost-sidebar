@@ -1,0 +1,47 @@
+{{!-- BEGIN-SNIPPET overview-content-api }}
+  {{frost-sidebar
+    ...
+    class='<class name>'
+    isOpen=<true/false>
+    content=(component '<component name>')
+    onToggle=<action>
+    ...
+  }}
+{{ END-SNIPPET --}}
+
+<div class='addon-demo-api'>
+  <div class='addon-demo-title'>
+    Notes
+  </div>
+  <div class='frost-modal-demo-notes'>
+    <p>
+      <p><b>ember-frost-sidebar</b> is a simple sidebar component.</p>
+    </p>
+  </div>
+  <div class='addon-demo-title'>
+    API
+  </div>
+  <div class='addon-demo-snippet'>
+    {{code-snippet name='overview-content-api.hbs'}}
+  </div>
+  {{#link-to 'demo.content' class='frost-link secondary medium'}}
+    <div class='content text'>Show me more details!</div>
+  {{/link-to}}
+</div>
+<div class='addon-demo-live'>
+  <div class='addon-demo-title'>
+    Live demo
+  </div>
+  <div class='addon-demo-snippet'>
+    {{code-snippet name='overview-frost-sidebar.hbs'}}
+  </div>
+  <div class='addon-demo-component'>
+    {{! BEGIN-SNIPPET overview-frost-sidebar }}
+    {{frost-sidebar
+      class="demo-instance"
+      content=(component 'simple-content' sentences=sentences)
+      onToggle=(action 'toggle')
+      isOpen=isOpen}}
+    {{! END-SNIPPET}}
+  </div>
+</div>

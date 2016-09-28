@@ -1,0 +1,52 @@
+{{!-- BEGIN-SNIPPET content-api }}
+  {{frost-sidebar
+    ...
+    class='<class name>'
+    isOpen=<true/false>
+    content=(component '<component name>')
+    onToggle=<action>
+    ...
+  }}
+{{ END-SNIPPET --}}
+
+<div class='addon-demo-api'>
+  <div class='addon-demo-title'>
+    Notes
+  </div>
+  <div class='addon-demo-notes'>
+    <p>
+      The size of the sidebar will growth based on the content until we reach the maximum height and width.
+      Once we reach the maximum size the sidebar content will be scrollable.
+    </p>
+  </div>
+  <div class='addon-demo-title'>
+    API
+  </div>
+  <div class='addon-demo-snippet'>
+    {{code-snippet name='content-api.hbs'}}
+  </div>
+</div>
+<div class='addon-demo-live'>
+  <div class='addon-demo-title'>
+    Live demo
+  </div>
+  <div class='addon-demo-snippet'>
+    {{code-snippet name='dynamic-updates-frost-sidebar.hbs'}}
+  </div>
+  <div class='addon-demo-component'>
+    {{! BEGIN-SNIPPET dynamic-updates-frost-sidebar }}
+    {{frost-sidebar
+      content=(component 'speed-o-meter'
+        gauges=incrementors
+      )
+      isOpen=isOpen
+      onToggle=(action 'toggle')
+    }}
+    {{! END-SNIPPET}}
+  </div>
+</div>
+
+
+
+
+

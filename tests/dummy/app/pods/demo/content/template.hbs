@@ -1,0 +1,54 @@
+{{!-- BEGIN-SNIPPET content-api }}
+  {{frost-sidebar
+    ...
+    class='<class name>'
+    isOpen=<true/false>
+    content=(component '<component name>')
+    onToggle=<action>
+    ...
+  }}
+{{ END-SNIPPET --}}
+
+<div class='addon-demo-api'>
+  <div class='addon-demo-title'>
+    Notes
+  </div>
+  <div class='addon-demo-notes'>
+    <p>
+      You probably want to put some content in your sidebar otherwise it's probably not very useful. You can set the
+      content by passing a component to the sidebar in the <i>content</i> attribute.
+    </p>
+  </div>
+  <div class='addon-demo-title'>
+    API
+  </div>
+  <div class='addon-demo-snippet'>
+    {{code-snippet name='content-api.hbs'}}
+  </div>
+</div>
+<div class='addon-demo-live'>
+  <div class='addon-demo-title'>
+    Live demo
+  </div>
+  <div class='addon-demo-snippet'>
+    <i>Component simple-content</i>
+    {{code-snippet name='simple-content.hbs'}}
+  </div>
+  <div class='addon-demo-snippet'>
+    <i>Demo controller</i>
+    {{code-snippet name='content-controller.js'}}
+  </div>
+  <div class='addon-demo-snippet'>
+    <i>Demo template</i>
+    {{code-snippet name='content-frost-sidebar.hbs'}}
+  </div>
+  <div class='addon-demo-component'>
+    {{! BEGIN-SNIPPET content-frost-sidebar }}
+    {{frost-sidebar
+      class="demo-instance"
+      content=(component 'simple-content' sentences=sentences)
+      onToggle=(action 'toggle')
+      isOpen=isOpen}}
+    {{! END-SNIPPET }}
+  </div>
+</div>

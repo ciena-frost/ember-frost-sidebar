@@ -7,7 +7,11 @@ var Router = Ember.Router.extend({
 })
 
 Router.map(function () {
-  this.route('demo', { path: '/' })
+  this.route('demo', { path: '/' }, function () {
+    this.route('overview', { path: '/' })
+    this.route('content')
+    this.route('dynamic-updates')
+  })
 })
 
 export default Router
