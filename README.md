@@ -47,7 +47,7 @@ This will allow you to access the internal sidebar content for testing.
 ### Available hooks
 * Sidebar - `<hook-name>-sidebar`
 * Sidebar content - `<hook-name>-sidebar-content`
-* Sidebar tab - `<hook-name>-sidebar-tab`
+* Sidebar button - `<hook-name>-sidebar-button`
 
 ## Development
 ### Setup

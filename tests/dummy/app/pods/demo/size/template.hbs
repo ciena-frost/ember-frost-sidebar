@@ -1,4 +1,4 @@
-{{!-- BEGIN-SNIPPET overview-content-api }}
+{{!-- BEGIN-SNIPPET size-api }}
   {{frost-sidebar
     ...
     class='<class name>'
@@ -13,34 +13,38 @@
   <div class='addon-demo-title'>
     Notes
   </div>
-  <div class='frost-modal-demo-notes'>
+  <div class='addon-demo-notes'>
     <p>
-      <p><b>ember-frost-sidebar</b> is a simple sidebar component.</p>
+      It's also possible to set the max height and width of the sidebar content by changing `max-height` and
+      `max-width` on `frost-sidebar-content-container` css class.
     </p>
   </div>
   <div class='addon-demo-title'>
     API
   </div>
   <div class='addon-demo-snippet'>
-    {{code-snippet name='overview-content-api.hbs'}}
+    {{code-snippet name='size-api.hbs'}}
   </div>
-  {{#link-to 'demo.content' class='frost-link secondary medium'}}
-    <div class='content text'>Show me more details!</div>
-  {{/link-to}}
 </div>
 <div class='addon-demo-live'>
   <div class='addon-demo-title'>
     Live demo
   </div>
   <div class='addon-demo-snippet'>
-    {{code-snippet name='overview-frost-sidebar.hbs'}}
+    <i>css</i>
+    {{code-snippet name='size-css.scss'}}
+  </div>
+  <div class='addon-demo-snippet'>
+    <i>Demo template</i>
+    {{code-snippet name='size-frost-sidebar.hbs'}}
   </div>
   <div class='addon-demo-component'>
-    {{! BEGIN-SNIPPET overview-frost-sidebar }}
+    {{! BEGIN-SNIPPET size-frost-sidebar }}
     {{frost-sidebar
+      class="change-sidebar-size"
       content=(component 'simple-content' sentences=sentences)
       onToggle=(action 'toggle')
       isOpen=isOpen}}
-    {{! END-SNIPPET}}
+    {{! END-SNIPPET }}
   </div>
 </div>

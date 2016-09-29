@@ -73,7 +73,7 @@ describeComponent(
           content=(component 'simple-content' sentences=sentences)
         }}`)
 
-      $hook('-sidebar-tab').click()
+      $hook('-sidebar-button').click()
 
       expect($hook('-sidebar-content')).to.have.length(1)
 
