@@ -1,74 +1,69 @@
 .frost-sidebar {
   position: absolute;
-  left: 0px;
 
   .liquid-container > .liquid-child {
     width: auto;
     height: auto;
   }
 
-  .open-container {
+  &-open {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    margin-top: 5px;
+    margin-bottom: 10px;
   }
 
-  .closed-container {
+  &-closed {
     width: 70px;
     height: 65px;
   }
 
-  .pod {
+  &-content-container {
+    max-width: 300px;
+    min-height: 100px;
+    max-height: 200px;
     padding: 5px;
     background-color: $frost-color-white;
     box-shadow: 1px 3px 15px $frost-color-grey-5;
     z-index: $frost-z-index-modal;
 
-    // Kick in the scroll bar after these max height and widths
-    // of the pod.
     .frost-scroll {
-      max-height: 550px;
-      max-width: 330px;
-      .pod-content {
-        padding: 20px;
-        margin-right: 20px;
-        margin-bottom: 20px
-      }
-
-      .ps-scrollbar-x-rail{
-        background-color: $frost-color-white;
-        position:relative;
-      }
-
-      .ps-scrollbar-y-rail{
-        background-color: $frost-color-white;
-        position:absolute;
-      }
+      width: 100%;
+      height: 100%;
     }
   }
 
-  .tab {
-    padding-top: 6px;
-    width: 55px;
-    height: 60px;
+  &-content {
+    padding: 20px;
+  }
+
+  &-button {
+    width: 40px;
+    height: 45px;
     border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 1px 2px 5px $frost-color-grey-5;
     background-color: $frost-color-white;
+    box-shadow: 1px 2px 5px $frost-color-grey-5;
+    cursor: pointer;
     z-index: $frost-z-index-modal;
 
-    .icon {
-      width: 50px;
-      height: 50px;
+    &-icon {
+      width: 35px;
+      height: 35px;
+      margin-top: 5px;
+      margin-right: 2px;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      &:not(.frost-sidebar-button-open) {
+        width: 50px;
+        padding-left: 10px;
+      }
+    }
+
+    &-open {
+      background-color: $frost-color-night-3;
     }
   }
-
-  .tab-open {
-    background-color: $frost-color-night-3;
-  }
-}
-
-.frost-sidebar .tab:hover:not(.tab-open) {
-  padding-left: 10px;
-  width: 65px;
 }

@@ -7,30 +7,47 @@
 [npm-img]: https://img.shields.io/npm/v/ember-frost-sidebar.svg "NPM Version"
 [npm-url]: https://www.npmjs.com/package/ember-frost-sidebar
 
-# ember-frost-sidebar <br /> [![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url]
+[ember-observer-badge]: http://emberobserver.com/badges/ember-frost-sidebar.svg "Ember Observer score"
+[ember-observer-badge-url]: http://emberobserver.com/addons/ember-frost-sidebar
 
+[ember-img]: https://img.shields.io/badge/ember-1.12.2+-orange.svg "Ember 1.12.2+"
 
- * [Installation](#Installation)
- * [API](#API)
- * [Examples](#Examples)
- * [Contributing](#Contributing)
+[bithound-img]: https://www.bithound.io/github/ciena-frost/ember-frost-sidebar/badges/score.svg "bitHound"
+[bithound-url]: https://www.bithound.io/github/ciena-frost/ember-frost-sidebar
+
+# ember-frost-sidebar
+###### Dependencies
+
+![Ember][ember-img]
+[![NPM][npm-img]][npm-url]
+
+###### Health
+
+[![Travis][ci-img]][ci-url]
+[![Coveralls][cov-img]][cov-url]
+
+###### Security
+
+[![bitHound][bithound-img]][bithound-url]
+
+###### Ember Observer score
+[![EmberObserver][ember-observer-badge]][ember-observer-badge-url]
 
 ## Installation
 ```
 ember install ember-frost-sidebar
 ```
-## API
-Not applicable at the moment.
 
-## Examples
-```
-{{#frost-sidebar class="demo-instance"}}
-  <div class="demo-pod-content">
-    <h4>Test content</h4>
-    {{frost-checkbox  checked=true label="Check me"}}
-  </div>
-{{/frost-sidebar}}
-```
+## API and Examples
+Detailed API and example usage can be found in the sample application in `tests/dummy`, which is also running at http://ciena-frost.github.io/ember-frost-sidebar
+
+## Testing with ember-hook
+This addon has been optimized for use with [ember-hook](https://github.com/Ticketfly/ember-hook). You can set a `hook` name on your sidebar template. 
+This will allow you to access the internal sidebar content for testing.
+### Available hooks
+* Sidebar - `<hook-name>-sidebar`
+* Sidebar content - `<hook-name>-sidebar-content`
+* Sidebar button - `<hook-name>-sidebar-button`
 
 ## Development
 ### Setup

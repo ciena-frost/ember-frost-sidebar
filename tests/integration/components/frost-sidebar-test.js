@@ -1,11 +1,15 @@
-/* jshint expr:true */
-import Ember from 'ember'
-import { expect, assert } from 'chai'
+import {
+  expect
+} from 'chai'
 import {
   describeComponent,
   it
 } from 'ember-mocha'
+import { beforeEach } from 'mocha'
 import hbs from 'htmlbars-inline-precompile'
+import {
+  $hook
+} from 'ember-hook'
 
 describeComponent(
   'frost-sidebar',
@@ -14,37 +18,81 @@ describeComponent(
     integration: true
   },
   function () {
-    it('renders', function () {
-      // Set any properties with this.set('myProperty', 'value');
-      // Handle any actions with this.on('myAction', function(val) { ... });
-      // Template block usage:
-      // this.render(hbs`
-      //   {{#frost-sidebar}}
-      //     template content
-      //   {{/frost-sidebar}}
-      // `);
-
-      this.render(hbs`
-        {{#frost-sidebar class="demo-instance"}}
-          <div class="demo-pod-content">
-            demo
-          </div>
-        {{/frost-sidebar}}
-    }`)
-      expect(this.$()).to.have.length(1)
+    beforeEach(function () {
+      this.set('actions', {
+        toggle () {
+          this.set('isOpen', !this.get('isOpen'))
+        }
+      })
+      this.setProperties({
+        isOpen: false,
+        sentences: ['test', 'test', 'test']
+      })
     })
-    it('renders and can open sidebar', function () {
+
+    it('renders closed sidebar', function (done) {
       this.render(hbs`
-        {{#frost-sidebar class="demo-instance"}}
-          <div class="demo-pod-content">
-            demo
-          </div>
-        {{/frost-sidebar}}
-      }`)
-      assert.lengthOf(this.$('.demo-pod-content'), 0)
-      Ember.run(() => this.$('.closed-container svg').click())
-      assert.lengthOf(this.$('.demo-pod-content'), 1)
-      expect(this.$('.open-container')).to.have.length(1)
+        {{frost-sidebar
+          isOpen=isOpen
+          onToggle=(action 'toggle')
+          content=(component 'simple-content' sentences=sentences)
+        }}`)
+
+      expect($hook('-sidebar-content')).to.have.length(0)
+
+      return capture('sidebar-closed', done, {
+        targetElement: $hook('-sidebar')[0],
+        experimentalSvgs: true
+      })
+    })
+
+    it('renders opened sidebar', function (done) {
+      this.setProperties({
+        isOpen: true
+      })
+      this.render(hbs`
+        {{frost-sidebar
+          isOpen=isOpen
+          onToggle=(action 'toggle')
+          content=(component 'simple-content' sentences=sentences)
+        }}`)
+
+      expect($hook('-sidebar-content')).to.have.length(1)
+
+      return capture('sidebar-opened', done, {
+        targetElement: $hook('-sidebar')[0],
+        experimentalSvgs: true
+      })
+    })
+
+    it('toggle', function (done) {
+      this.render(hbs`
+        {{frost-sidebar
+          isOpen=isOpen
+          onToggle=(action 'toggle')
+          content=(component 'simple-content' sentences=sentences)
+        }}`)
+
+      $hook('-sidebar-button').click()
+
+      expect($hook('-sidebar-content')).to.have.length(1)
+
+      return capture('sidebar-toggle', done, {
+        targetElement: $hook('-sidebar')[0],
+        experimentalSvgs: true
+      })
+    })
+
+    it('change hook', function () {
+      this.render(hbs`
+        {{frost-sidebar
+          isOpen=isOpen
+          onToggle=(action 'toggle')
+          content=(component 'simple-content' sentences=sentences)
+          hook='my-hook'
+        }}`)
+
+      expect($hook('my-hook-sidebar')).to.have.length(1)
     })
   }
 )
