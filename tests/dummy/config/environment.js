@@ -39,7 +39,8 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.rootURL = '/frost-sidebar'
+    ENV.rootURL = '/ember-frost-sidebar'
+    ENV.locationType = 'hash'
     ENV.isDemo = true
     ENV['ember-cli-mirage'] = {
       enabled: true
