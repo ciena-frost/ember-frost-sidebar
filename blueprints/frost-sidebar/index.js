@@ -10,7 +10,7 @@ module.exports = {
   afterInstall: function () {
     return this.addAddonsToProject({
       packages: [
-        {name: 'ember-frost-core', target: '^0.29.0'},
+        {name: 'ember-frost-core', target: '~0.29.0'},
         {name: 'liquid-fire', target: '~0.26.0'}
       ]
     })
