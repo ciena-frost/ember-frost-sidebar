@@ -1,3 +1,7 @@
+# 2.0.0
+- Update dependencies
+
+
 # 1.2.2
  - Modified environment.js to have correct rootURL, and locationType
 
