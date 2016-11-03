@@ -10,14 +10,14 @@
     "build": "ember build",
     "start": "ember server",
     "test": "npm run lint && COVERAGE=true ember test",
-    "eslint": "eslint *.js addon app config tests",
+    "eslint": "eslint *.js addon app config tests --fix",
     "sass-lint": "sass-lint -q -v",
     "md-lint": "remark *.md",
     "lint": "npm run eslint && npm run sass-lint && npm run md-lint"
   },
   "repository": "git@github.com:ciena-frost/ember-frost-sidebar.git",
   "engines": {
-    "node": ">= 5.0.0"
+    "node": ">= 6.0.0"
   },
   "author": "",
   "license": "MIT",
