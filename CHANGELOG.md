@@ -1,3 +1,8 @@
+# 3.0.0
+**Updated** minimum node version to 6
+
+
+
 # 2.0.0
 - Update dependencies
 
