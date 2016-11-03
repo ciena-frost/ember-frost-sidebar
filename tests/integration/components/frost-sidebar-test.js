@@ -8,7 +8,8 @@ import {
 import { beforeEach } from 'mocha'
 import hbs from 'htmlbars-inline-precompile'
 import {
-  $hook
+  $hook,
+  initialize as initializeHook
 } from 'ember-hook'
 
 describeComponent(
@@ -19,6 +20,7 @@ describeComponent(
   },
   function () {
     beforeEach(function () {
+      initializeHook()
       this.set('actions', {
         toggle () {
           this.set('isOpen', !this.get('isOpen'))
