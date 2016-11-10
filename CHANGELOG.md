@@ -1,3 +1,7 @@
+# 3.0.1
+Fix for code coverage issues with v>=0.3.6
+
+
 # 3.0.0
 **Updated** minimum node version to 6
 
