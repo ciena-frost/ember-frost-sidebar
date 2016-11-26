@@ -1,3 +1,6 @@
+# 3.1.0
+* Add icons
+
 # 3.0.1
 Fix for code coverage issues with v>=0.3.6
 
