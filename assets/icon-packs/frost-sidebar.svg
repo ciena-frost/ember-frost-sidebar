@@ -1,0 +1,22 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='display: none'>
+<symbol id="layer-normal" viewBox="0 0 40 40" preserveAspectRatio="undefined">
+<g>
+	<polygon style="fill:#FFFFFF;stroke:#859CA8;stroke-width:1.9282;stroke-miterlimit:10;" points="37.6,23.941 19.875,34.917 
+		2.15,23.941 19.875,15.857 	"/>
+	<polygon style="fill:#FFFFFF;stroke:#637582;stroke-width:1.9282;stroke-miterlimit:10;" points="37.6,18.156 19.875,29.133 
+		2.15,18.156 19.875,10.072 	"/>
+	<polygon style="fill:#FFFFFF;stroke:#33424F;stroke-width:1.9282;stroke-miterlimit:10;" points="37.6,12.372 19.875,23.348 
+		2.15,12.372 19.875,4.288 	"/>
+</g>
+</symbol>
+<symbol id="layer-open" viewBox="0 0 40 40" preserveAspectRatio="undefined">
+<g>
+	<polygon style="fill:#859CA8;stroke:#FFFFFF;stroke-width:1.9282;stroke-miterlimit:10;" points="37.6,23.941 19.875,34.917 
+		2.15,23.941 19.875,15.857 	"/>
+	<polygon style="fill:#859CA8;stroke:#FFFFFF;stroke-width:1.9282;stroke-miterlimit:10;" points="37.6,18.156 19.875,29.133 
+		2.15,18.156 19.875,10.072 	"/>
+	<polygon style="fill:#859CA8;stroke:#FFFFFF;stroke-width:1.9282;stroke-miterlimit:10;" points="37.6,12.372 19.875,23.348 
+		2.15,12.372 19.875,4.288 	"/>
+</g>
+</symbol>
+</svg>
