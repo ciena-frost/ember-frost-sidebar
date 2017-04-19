@@ -16,10 +16,7 @@ module.exports = {
       if (pkgsToInstall.length !== 0) {
         // Call the blueprint hook
         return this.addAddonsToProject({
-          packages: pkgsToInstall,
-          blueprintOptions: {
-            saveDev: true
-          }
+          packages: pkgsToInstall
         })
       }
     })
