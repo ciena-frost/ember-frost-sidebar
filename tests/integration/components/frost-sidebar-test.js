@@ -1,100 +1,73 @@
-import {
-  expect
-} from 'chai'
-import {
-  describeComponent,
-  it
-} from 'ember-mocha'
-import { beforeEach } from 'mocha'
+import {expect} from 'chai'
+import {$hook, initialize as initializeHook} from 'ember-hook'
+import {integration} from 'ember-test-utils/test-support/setup-component-test'
 import hbs from 'htmlbars-inline-precompile'
-import {
-  $hook,
-  initialize as initializeHook
-} from 'ember-hook'
+import {beforeEach, describe, it} from 'mocha'
 
-describeComponent(
-  'frost-sidebar',
-  'Integration: FrostSidebarComponent',
-  {
-    integration: true
-  },
-  function () {
-    beforeEach(function () {
-      initializeHook()
-      this.set('actions', {
-        toggle () {
-          this.set('isOpen', !this.get('isOpen'))
-        }
-      })
-      this.setProperties({
-        isOpen: false,
-        sentences: ['test', 'test', 'test']
-      })
+const test = integration('frost-sidebar')
+describe(test.label, function () {
+  test.setup()
+
+  beforeEach(function () {
+    initializeHook()
+    this.set('actions', {
+      toggle () {
+        this.set('isOpen', !this.get('isOpen'))
+      }
     })
-
-    it('renders closed sidebar', function (done) {
-      this.render(hbs`
-        {{frost-sidebar
-          isOpen=isOpen
-          onToggle=(action 'toggle')
-          content=(component 'simple-content' sentences=sentences)
-        }}`)
-
-      expect($hook('-sidebar-content')).to.have.length(0)
-
-      return capture('sidebar-closed', done, {
-        targetElement: $hook('-sidebar')[0],
-        experimentalSvgs: true
-      })
+    this.setProperties({
+      isOpen: false,
+      sentences: ['test', 'test', 'test']
     })
+  })
 
-    it('renders opened sidebar', function (done) {
-      this.setProperties({
-        isOpen: true
-      })
-      this.render(hbs`
-        {{frost-sidebar
-          isOpen=isOpen
-          onToggle=(action 'toggle')
-          content=(component 'simple-content' sentences=sentences)
-        }}`)
+  it('renders closed sidebar', function () {
+    this.render(hbs`
+      {{frost-sidebar
+        isOpen=isOpen
+        onToggle=(action 'toggle')
+        content=(component 'simple-content' sentences=sentences)
+      }}`)
 
-      expect($hook('-sidebar-content')).to.have.length(1)
+    expect($hook('-sidebar-content')).to.have.length(0)
+  })
 
-      return capture('sidebar-opened', done, {
-        targetElement: $hook('-sidebar')[0],
-        experimentalSvgs: true
-      })
+  it('renders opened sidebar', function () {
+    this.setProperties({
+      isOpen: true
     })
+    this.render(hbs`
+      {{frost-sidebar
+        isOpen=isOpen
+        onToggle=(action 'toggle')
+        content=(component 'simple-content' sentences=sentences)
+      }}`)
 
-    it('toggle', function (done) {
-      this.render(hbs`
-        {{frost-sidebar
-          isOpen=isOpen
-          onToggle=(action 'toggle')
-          content=(component 'simple-content' sentences=sentences)
-        }}`)
+    expect($hook('-sidebar-content')).to.have.length(1)
+  })
 
-      $hook('-sidebar-button').click()
+  it('toggle', function () {
+    this.render(hbs`
+      {{frost-sidebar
+        isOpen=isOpen
+        onToggle=(action 'toggle')
+        content=(component 'simple-content' sentences=sentences)
+      }}`)
 
-      expect($hook('-sidebar-content')).to.have.length(1)
+    $hook('-sidebar-button').click()
 
-      return capture('sidebar-toggle', done, {
-        targetElement: $hook('-sidebar')[0],
-        experimentalSvgs: true
-      })
-    })
+    expect($hook('-sidebar-content')).to.have.length(1)
+  })
 
-    it('change hook', function () {
-      this.render(hbs`
-        {{frost-sidebar
-          isOpen=isOpen
-          onToggle=(action 'toggle')
-          content=(component 'simple-content' sentences=sentences)
-          hook='my-hook'
-        }}`)
+  it('change hook', function () {
+    this.render(hbs`
+      {{frost-sidebar
+        isOpen=isOpen
+        onToggle=(action 'toggle')
+        content=(component 'simple-content' sentences=sentences)
+        hook='my-hook'
+      }}`)
 
-      expect($hook('my-hook-sidebar')).to.have.length(1)
-    })
-  }
-)
+    expect($hook('my-hook-sidebar')).to.have.length(1)
+  })
+})
