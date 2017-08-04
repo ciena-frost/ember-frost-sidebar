@@ -18,8 +18,8 @@ addons:
 
 env:
   matrix:
-  - EMBER_TRY_SCENARIO=default
-  - EMBER_TRY_SCENARIO=ember-release
+  - EMBER_TRY_SCENARIO=ember-lts-2.8
+  - EMBER_TRY_SCENARIO=ember-default
   global:
     - CXX=g++-4.8
     - secure: biEDHaGM6QeyHNXrGOS2da4i4WcShBxlbOt29+LeYORGFuTydTHtgRP5M7LZF6dPzfLBY/TlPAJ1Evct4Qln76WgXszcfpVpgzHKlDfxBjhINvw1p4GWL3YppaS4rlGO7/3Kk9knEXU0nct977ZZw+7f9dq2cCjPuGBxsOW7PmGO4jH7L5wYGDkOjhAKXb1IpPth097+1s20j9ALhbiYN7d89GjlyAaYc/ZD8/cKifqzyNPqVKRZBK61PKmPCfzLmcQTFT1q6KCSU/PPEr80B7nXVyygUTinaB5DdIajYO2MiNLYS+qDAbCBORl3UQDMjagZxhXM5I6IZJmdrh/kts0ErEU4lQR8n7J5URoP1OyvN6H85Si/ipxd4X5Xc1R0v083EZmVcal5rFfAafiKyyF4JtIqKvg2DNwi1AZVwnW3DmuUnq3GAAgyhVvrJ1hBZwEo4WO5At0ZDu2Lhr1eOyxh8YP6xgklIMhhKNZf10hIydZStJfNZVoPlJN+aY2oDbjdckqEFyBuyPvKZMmlniU4+uUxj106ovtQEnDUrrZZ5m90tNHD+BStZKIBBcl0oCjpwyA3YNYlB5RJhBZcw8eueayyYn3PG0qtLbBcQj2w6AYt0nAuiu9f5NEn9dvHqWU/+0HU+R15vljcWpcBJhcirN4vhMHBscqqkibLXA8=
@@ -27,8 +27,6 @@ env:
 matrix:
   fast_finish: true
   allow_failures:
-  - env: EMBER_TRY_SCENARIO=ember-canary
-  - env: EMBER_TRY_SCENARIO=ember-beta
   - node_js: 'stable'
 
 before_install:
