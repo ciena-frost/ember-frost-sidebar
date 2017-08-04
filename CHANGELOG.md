@@ -1,3 +1,15 @@
+# 4.0.2 (2017-08-04)
+* **Added** `pr-bumper.json` configuration file
+* **Updated** `pr-bumper` to version 2
+* **Updated** `PULL_REQUEST_TEMPLATE` to add new `#none#` support
+* **Updated** travis CI build and publish scripts
+* **Updated** secure auth tokens
+* **Updated** `ember-test-utils` to version 4
+* **Updated** linting errors
+* **Updated** test to remove use of deprecated `describeComponent()`
+* **Removed** usage of `ember-cli-visual-acceptance`
+* **Removed** `testem.json` in favor of `testem.js`
+
 # 4.0.1 (2017-04-21)
 * **Added** blueprint check
 
