@@ -1,66 +1,69 @@
 sudo: required
 dist: trusty
 language: node_js
+
 node_js:
-- '6.9'
+- '6.11.0'
 - 'stable'
-branches:
-  except:
-  - /^v[0-9\.]+/
+
 addons:
   apt:
     sources:
     - ubuntu-toolchain-r-test
+    - google-chrome
     packages:
+    - google-chrome-stable
     - g++-4.8
+  firefox: 'latest'
+
 env:
   matrix:
   - EMBER_TRY_SCENARIO=default
   - EMBER_TRY_SCENARIO=ember-release
   global:
     - CXX=g++-4.8
-    - secure:     MtkMYheYbKK6mdVbt2CanbAnDURkxOrHs94vlcq69RUTCF7fXntGFct4pWR/ClQS7+koLqZCMvBXW9WfVZ1YM8pcPzyXbzG1/XxJp9lW8pGrVQOiLVavYNU5gvg4IZb0i5be96yWk4Ax51Ev4obS6iElxFbICbfqCoMkv96AGZWQ5bCjzASPtPRBN28q8cE26F0YlG3ML3gIt3JqmXaZbXkNxkKXr3mTkZFP7rMq9axwWyqqQU019eHU1EOZG0Sj3t43Ilm4gBI9L5+CDePYQzLRrUt5QKxwfN+VKJzbf/3k80JAmPvBumq3G2lRRY2uidWvYdeG7qTsFNOjXMPVXP5miGwiScCHy/OT66BROi5ls6u4rYVN0uN03pR+bhyUsWKk+M6KSQux7Q58Sz5CCx53vGdOeg2+pvGhFLxfa7E7natU0avIL59sPka1QxlWEVN5jAoKcZfRtXnbx2tExmLAb/iHLhyCBOs3CPOgkP9/DLTvpQFv2QJiwRXg1zIRMWJxt3WKbhJjlMyn3X7Tpx431PokC7FjCuFRCD2bzGfH0Wa6HghBNmtE4vEcc6q+Lz9p0L3eXQz0BBUry/XX3nG9caU871F3FkF2YXRazYcO7i5H1cuNLgEOS+jK6Q8gURLtuZu+IyBAN/a/Wf3URsGmhzmbNNPCtwf4xeTpWic=
+    - secure: biEDHaGM6QeyHNXrGOS2da4i4WcShBxlbOt29+LeYORGFuTydTHtgRP5M7LZF6dPzfLBY/TlPAJ1Evct4Qln76WgXszcfpVpgzHKlDfxBjhINvw1p4GWL3YppaS4rlGO7/3Kk9knEXU0nct977ZZw+7f9dq2cCjPuGBxsOW7PmGO4jH7L5wYGDkOjhAKXb1IpPth097+1s20j9ALhbiYN7d89GjlyAaYc/ZD8/cKifqzyNPqVKRZBK61PKmPCfzLmcQTFT1q6KCSU/PPEr80B7nXVyygUTinaB5DdIajYO2MiNLYS+qDAbCBORl3UQDMjagZxhXM5I6IZJmdrh/kts0ErEU4lQR8n7J5URoP1OyvN6H85Si/ipxd4X5Xc1R0v083EZmVcal5rFfAafiKyyF4JtIqKvg2DNwi1AZVwnW3DmuUnq3GAAgyhVvrJ1hBZwEo4WO5At0ZDu2Lhr1eOyxh8YP6xgklIMhhKNZf10hIydZStJfNZVoPlJN+aY2oDbjdckqEFyBuyPvKZMmlniU4+uUxj106ovtQEnDUrrZZ5m90tNHD+BStZKIBBcl0oCjpwyA3YNYlB5RJhBZcw8eueayyYn3PG0qtLbBcQj2w6AYt0nAuiu9f5NEn9dvHqWU/+0HU+R15vljcWpcBJhcirN4vhMHBscqqkibLXA8=
+
 matrix:
   fast_finish: true
   allow_failures:
   - env: EMBER_TRY_SCENARIO=ember-canary
   - env: EMBER_TRY_SCENARIO=ember-beta
+  - node_js: 'stable'
+
 before_install:
 - npm config set spin false
-- npm install -g coveralls pr-bumper
-- pr-bumper check
+- npm install -g coveralls pr-bumper@^2.0.0
+- $(npm root -g)/pr-bumper/.travis/maybe-check-scope.sh
+
+install:
+- $(npm root -g)/pr-bumper/.travis/maybe-install.sh
+
 before_script:
-- export CHROME_BIN=/usr/bin/google-chrome
 - "export DISPLAY=:99.0"
 - "sh -e /etc/init.d/xvfb start"
 - sleep 3 # give xvfb some time to start
-- sudo apt-get update
-- sudo apt-get install -y libappindicator1 fonts-liberation
-- wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-- sudo dpkg -i google-chrome*.deb
-install:
-- npm install
-- bower install
+
 script:
-- npm run lint
-- ember try:one $EMBER_TRY_SCENARIO --- ember tva --push-var='false' --msg-on=$EMBER_TRY_SCENARIO
+- $(npm root -g)/pr-bumper/.travis/maybe-test.sh
+- .travis/maybe-bump-version.sh
+
 after_success:
-- .travis/publish-coverage.sh
-before_deploy:
-- pr-bumper bump
+- .travis/maybe-publish-coverage.sh
+- .travis/maybe-publish-gh-pages.sh
+
 deploy:
   provider: npm
   email: npm.ciena@gmail.com
   skip_cleanup: true
   api_key:
-    secure:    WLRmYSIjNCAxN1pdVwTNVOZposyH2UhSHKQ6UizEDxFsfLMuE4C/lJWjTJgWzvhFi4Y8fHSjybr0iKkxXS8Afz4jjcNYDJksxEMgYcEH9Uki+9W/L0s+LoT4a0YvX8Gvz0nFuQNAJdh7UePPIV7j9fuhOX6YYQtjCdoic/XpTu+OFo04GGBKAuiRGiO7gsjE39UTC1CX6KTzPcvPLsGcMX87ixXbbgEGPg16njU6RNlEUX/rsZK2eQaYhR72twRTsaKlbt0h0d+A0V7tKe/bVf8uspg/odKQSW2mhujdHs8x2B9yIk98ZfEToiME4Wv9lkt8dtpsXiHibtPA3UsVv/Bxhgag3t1L/TOpa68ygZ8TzCi3ovTaPuypT8cnKWjJcq/EqtRAl4BsUN7NQ93NEHFjLkgGkvp9H7SJJS1PRb9Ht/l1l2ayh+IsOhsGYAyWKkoaltDgzsNrSyUirDXJkzhDv54JXZ2u/Kl/VB1pdibrclirHuMEfeBjlRIJvmBGovuVEysqqvU1q1b99ARXSMt1ZMRWjYnE7fSRunGrlthnurotA/W2e0FWTop1BpIi3TeqftT9QpzLYAXskCKokjnYPQfive9EEUjOyIl4McvX/VDXWATpcy3IBWItZskqmy2gJ92Vy6K/UKr01J0FepOSWpUK9cG/ax4hB9adCZw=
+    secure: kpLlZb+R4CBEjk++wJBqG4btBEB7gQjgdpl7fIliF9hrefR8wmG+szzw0ASvavSXinvcJrlHelwzPCRWj1Mw8Ig2Lsb+5PwVRbyXrZKY9svD8kKUrl0NKSLYGuNsB50iQLYw4l6jEMj4++mzxT9fL4HUib2CctNbmzlpTpgFq3dHcmuPewl+JqEElV0t1ykEoz0dIrbEQHbhOou5npEHJCYNj7g8Lpx3LVdondgYTlb12MrszmraxniDt/IW2r2CIFFBP40qAScd9Oks7kxKsKE2cRIa0GC4q3ieewkw+wJAV83wxwd0oRsv9K1y/SHglFn1Bu1xxkGUvEBDq9b4zTf/GfYYdv01/rCzskK3B5PQtdSdzIAqMBACicHpTx86J/0WKr+Zat3i3/yNcZoJqIRHIzt9ntngHSK41WkEog+fG1IDRrGKKckOzzkt/ticoo/MYdJTWm5bs60kxxva9s7qEUAvUUMDd6dd9pmjN5wmoBSx0Q9d/M6zj6ufJdMv35yw8aZXMNr+liYeGAkxOEJp8/jc+0e2ih3kCGEAWjledVPAuGQt80174g+KaHFVDtZBqx3fvtAq7HvrM524094zb4lTC3suzdsu1aKCDnVESUuynMPwpceYOyXDw81RJNkGHKvkohrf/K6B69FXH5/ClnREMf/TQpG3HgKjf+Q=
   on:
-    branch: master
+    all_branches: true
     condition: "$EMBER_TRY_SCENARIO = 'default'"
-    node: 'stable'
-    tags: false
-after_deploy:
-- .travis/publish-gh-pages.sh
+    node: '6.11.0'
+    tags: true
+
 notifications:
   slack:
-    secure:    fuQbPaw6fv4vmURI3UA0F0cz3cHnyaAY21aBqnkM8fEA62IOnCufjjkS/T+eRZj0SF751K0nTUecEzPfSo7V+swQwgntgG7LSCZfRvtg9UXpR+CdTxHZn9qFyW51zplvKE0EMw1HTd17ToURHbDXtyk14eBz9UfYQ8B5xFiprWC/h91nY8eYKksNanP3FhgnYP8cSaFY2aB3ELUDCombrxwsgE6Nn8qNfyN4cvZgQmhKisGk0RKz7duHjEMZtsiu2FnXCy3NKLPCQAygi7lIajtOk08fuDc9tIPbWPNT4bxFpVHaTLCN6TIwl66qeoArWEx5Jh209PuY7Zh/JMGvSGV0rFAOm+v5pwcOksVbnEIYMD8Buo3xftO3qydPYGbaeGAFgE5NkR4rZ0VXEZTLDFIYnnptbUjKWnM0z6jAzKZM6dGRh3JpajLXl9lNS6r36xphYRZb+xebbLobBdTjl5EnMh5BdH4T/HoSEka3NwXRknbBvIvJEIOnrARwysJQIFNDtlJ1JA85HwQuY9DvBOuW4s3ARKfGFP9Zhmv1BvahTb/6SYolQFLC1KrE1u5DzrmXEW7/79wPEIERgR2atVh1NzJLCBVyg7G9uF6ACNZFVtXTH3PXTxVZeT8AXhyCW+grkqr180rzEYXgx/iVsvYxOHsnH0EhpNdFtHvCFbU=
+    secure: GCEop3ajbWxsx8pRuQjcDoFtUQisHmb99lW1JWXs8Pi1kkkYlk+SYA0oPUr2qt2n2uhicfgDPKlnl3xlpYjstS2KaR0SGLuRjs/B+xPlQN/lHsID3Ir72ohabA88q07RKTgSrjdAG8e7igV4D6N29DYMUWUfdu8/+STFOhIew+JjLHNS+qPHHnYQMLvKoVAF+0NC+geSkOABOip8dvOT/t0ODjs3dIJb1zF4ja2zX2KYLc0JZCXjFjq/bBXMu9qi8MGj9E06ko+IhHHR8vRJ0Ldqg8f70V31raH7jKmFoxkkpGBuA17VWmLz3Zc+8pga2bc9DbTFhQuLEFnc3lbiQuK5mlhRxN491pY0Rt3cRxtYvsX9sVD5YsOF6Fe3TSgl58E7nObIzRSV1lhTJGXV+3fiBNAat3+pGCCIU9bNM0l6ArhrrG0Vm3Fgr/PtsUNtphWgnxfsjWiGbCk4j0hoN/LgHzo7DQx/YW4W1M5OM5NfLJYf6uomV0LLAZYKvKp279XHMSiBYMia/8FtVnWeAb8Qb+fTpOV3ixP1VaxYSgfmSzEslK8dg95HTsXyUQySNV8AG7PlzAF4krF015ler6h2KszfUMHsF4+qxxAuKQhIfP8cgQf4caChW2EmbcNcZ7viURVtYpjJH8PBZsIG7cuqHWExdAlztCDJFtCX9Jc=
