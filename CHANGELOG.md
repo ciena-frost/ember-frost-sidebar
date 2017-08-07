@@ -1,3 +1,11 @@
+# 4.0.3 (2017-08-07)
+* **Updated** Ember CLI version from `2.8.x` to `2.12.3`
+* **Updated** Ember version from `2.8.x` to `2.12.x`
+* **Updated** ember-try config for LTS-2.8 and LTS-2-12
+* **Updated** travis CI build matrix for LTS-2.8 and default (2.12.x)
+* **Updated** `liquid-fire` version to the Ember 2.12.x compatible version
+* **Updated** `ember-frost-core` version to the Ember 2.12.x compatible version
+
 # 4.0.2 (2017-08-04)
 * **Added** `pr-bumper.json` configuration file
 * **Updated** `pr-bumper` to version 2
