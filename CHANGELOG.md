@@ -1,3 +1,6 @@
+# 4.0.4 (2017-08-11)
+* Upgrade ember-cli 2.12.3 inter-dependencies
+
 # 4.0.3 (2017-08-07)
 * **Updated** Ember CLI version from `2.8.x` to `2.12.3`
 * **Updated** Ember version from `2.8.x` to `2.12.x`
