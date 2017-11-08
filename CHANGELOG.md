@@ -1,3 +1,7 @@
+# 5.0.0 (2017-11-08)
+* Use the latest `ember-frost-core`, with a flexible minor version (`^3.0.1`)
+
+
 # 4.0.4 (2017-08-11)
 * Upgrade ember-cli 2.12.3 inter-dependencies
 
