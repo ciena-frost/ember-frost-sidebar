@@ -7,13 +7,13 @@
         </div>
       {{/frost-scroll}}
     </div>
-    <div class="frost-sidebar-button frost-sidebar-button-open" {{action onToggle}} data-test={{hook (concat hook '-sidebar-button')}}>
+    <div class="frost-sidebar-button frost-sidebar-button-open" {{action onToggle}} data-test={{hook (concat hook '-sidebar-button')}} role="button">
       {{frost-icon class="frost-sidebar-button-icon" icon="layer-open" pack='frost-sidebar'}}
     </div>
   </div>
 {{else}}
   <div class="frost-sidebar-closed" data-test={{hook (concat hook '-sidebar')}}>
-    <div class="frost-sidebar-button" {{action onToggle}} data-test={{hook (concat hook '-sidebar-button')}}>
+    <div class="frost-sidebar-button" {{action onToggle}} data-test={{hook (concat hook '-sidebar-button')}} role="button">
       {{frost-icon class="frost-sidebar-button-icon" icon="layer-normal" pack='frost-sidebar'}}
     </div>
   </div>
