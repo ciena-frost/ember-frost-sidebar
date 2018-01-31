@@ -2,7 +2,6 @@
   "name": "ember-frost-sidebar",
   "dependencies": {
     "Faker": "3.0.1",
-    "lodash": "^4.10.0",
     "pretender": "~0.12.0",
     "jquery": "2.1.4",
     "es6-promise": "^4.0.3",
