@@ -1,3 +1,50 @@
+# 6.0.0 (2018-01-31)
+* **Added** ignore the linting of the `CHANGELOG.md`
+* **Added** ignoring of `package-lock` until we are ready to move to node 8
+* **Added** ignoring of `.DS_Store` file
+* **Removed** useLintTree ember-cli-mocha configuration from `ember-cli-build.js`
+* **Added** `ember-frost-test`@ `^4.0.0`
+* **Added** `chai-jquery` @ `^2.0.0`
+* **Added** `ember-cli-chai` @ `0.4.3`
+* **Updated** `ember-cli-mocha` to `0.14.4`
+* **Updated** `ember-sinon` to `^0.7.0`
+* **Updated** `ember-test-utils` to `^8.1.0`
+* **Added** `sinon-chai` @ `^2.14.0`
+* **Removed** `.template-lintrc.js` file since this config is now being provided by `ember-test-utils`
+* **Removed** blueprint installation of packages since they are now being provided as dependencies of this add-on
+* **Updated** `ember-cli-code-coverage` to `0.3.12`
+* **Updated** `ember-cli-frost-blueprints` to `^5.0.1`
+* **Updated** `ember-cli-htmlbars-inline-precompile` to `0.3.12`
+* **Updated** pin `ember-code-snippet` to `1.7.0`
+* **Updated** `ember-browserify` to `^1.2.0`
+* **Removed** unused `ember-cli-notifications` package
+* **Updated** `ember-concurrency` to `0.7.19`
+* **Removed** unused `ember-computed-decorators`package
+* **Removed** unused `ember-elsewhere` package
+* **Updated** `ember-hook` to `1.4.2` and moved to a dependency instead of a devDependency
+* **Removed** unused `ember-lodash-shim` package
+* **Updated** `ember-prop-types` to `^6.0.1` and moved to a dependency instead of a devDependency
+* **Removed** unused `ember-redux` package
+* **Removed** unused `ember-spread` package
+* **Removed** unused `ember-truth-helpers` package
+* **Removed** unused `fixpack` package
+* **Removed** unused `lodash-es` package
+* **Removed** unused `redux` package
+* **Removed** unused `redux-thunk` package
+* **Updated** `ember-cli-sass` to `7.1.1`
+* **Updated** `ember-frost-core` to `^5.1.1`
+* **Updated** `liquid-fire` to `0.27.2`
+* **Updated** add json-summary reporter to code coverage config
+* **Removed** babel es7.decorators config from `ember-cli-build.js` since `ember-computed-decorators` is no longer installed
+* **Removed** unused `ember-inflector` bower package
+* **Removed** unused `lodash` bower package
+* **Removed** unused `jquery` bower package
+* **Removed** unused `es6-promise` bower package
+* **Removed** unused `resemblejs` bower package
+* **Updated** `Faker` and `pretender` bower packages to be devDependencies
+
+
+
 # 5.0.1 (2017-11-17)
 * #28 - Bind context to call of this._super.included() in index.js
 
