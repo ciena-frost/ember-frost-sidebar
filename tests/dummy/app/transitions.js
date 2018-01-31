@@ -6,4 +6,3 @@ export default function () {
     this.reverse('toLeft', {duration: 200})
   )
 }
-
