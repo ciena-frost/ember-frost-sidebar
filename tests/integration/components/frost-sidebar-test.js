@@ -21,7 +21,7 @@ describe(test.label, function () {
     })
   })
 
-  it('renders closed sidebar', function () {
+  it('should render closed sidebar', function () {
     this.render(hbs`
       {{frost-sidebar
         isOpen=isOpen
@@ -32,7 +32,7 @@ describe(test.label, function () {
     expect($hook('-sidebar-content')).to.have.length(0)
   })
 
-  it('renders opened sidebar', function () {
+  it('should render opened sidebar', function () {
     this.setProperties({
       isOpen: true
     })
@@ -46,7 +46,7 @@ describe(test.label, function () {
     expect($hook('-sidebar-content')).to.have.length(1)
   })
 
-  it('toggle', function () {
+  it('should toggle', function () {
     this.render(hbs`
       {{frost-sidebar
         isOpen=isOpen
@@ -59,7 +59,7 @@ describe(test.label, function () {
     expect($hook('-sidebar-content')).to.have.length(1)
   })
 
-  it('change hook', function () {
+  it('should change hook', function () {
     this.render(hbs`
       {{frost-sidebar
         isOpen=isOpen

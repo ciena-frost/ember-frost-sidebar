@@ -42,7 +42,8 @@ ember install ember-frost-sidebar
 Detailed API and example usage can be found in the sample application in `tests/dummy`, which is also running at http://ciena-frost.github.io/ember-frost-sidebar
 
 ## Testing with ember-hook
-This addon has been optimized for use with [ember-hook](https://github.com/Ticketfly/ember-hook). You can set a `hook` name on your sidebar template. 
+This addon has been optimized for use with [ember-hook](https://github.com/Ticketfly/ember-hook). You can set a `hook`
+name on your sidebar template.
 This will allow you to access the internal sidebar content for testing.
 ### Available hooks
 * Sidebar - `<hook-name>-sidebar`
