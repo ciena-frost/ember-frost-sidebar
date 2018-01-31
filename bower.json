@@ -1,7 +1,6 @@
 {
   "name": "ember-frost-sidebar",
   "dependencies": {
-    "ember-inflector": "1.3.1",
     "Faker": "3.0.1",
     "lodash": "^4.10.0",
     "pretender": "~0.12.0",
