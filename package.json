@@ -40,7 +40,6 @@
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-export-application-global": "^1.0.5",
     "ember-frost-test": "^4.0.0",
-    "ember-hook": "1.4.2",
     "ember-load-initializers": "^0.6.0",
     "ember-lodash-shim": "^1.0.0",
     "ember-prop-types": "^3.14.1",
@@ -66,6 +65,7 @@
     "ember-cli-babel": "^5.1.7",
     "ember-cli-htmlbars": "^1.1.1",
     "ember-cli-sass": "5.6.0",
+    "ember-hook": "1.4.2",
     "liquid-fire": "0.27.3",
     "ember-frost-core": "^3.0.1"
   },
