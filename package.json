@@ -56,10 +56,10 @@
     "ember-cli-babel": "^5.1.7",
     "ember-cli-htmlbars": "^1.1.1",
     "ember-cli-sass": "7.1.1",
+    "ember-frost-core": "^5.1.1",
     "ember-hook": "1.4.2",
     "ember-prop-types": "^6.0.1",
-    "liquid-fire": "0.27.3",
-    "ember-frost-core": "^3.0.1"
+    "liquid-fire": "0.27.3"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
