@@ -17,6 +17,7 @@ export default Component.extend(PropTypesMixin, {
       PropTypes.object,
       PropTypes.EmberObject
     ]).isRequired,
+    label: PropTypes.EmberComponent,
 
     // Actions
     onToggle: PropTypes.func.isRequired
