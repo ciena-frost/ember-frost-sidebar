@@ -68,6 +68,7 @@
     &:hover {
       &:not(.frost-sidebar-button-open) {
         padding-left: 10px;
+        white-space: nowrap;
       }
     }
 

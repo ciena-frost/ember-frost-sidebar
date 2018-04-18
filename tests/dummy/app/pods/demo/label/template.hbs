@@ -1,0 +1,46 @@
+{{!-- BEGIN-SNIPPET label-api }}
+  {{frost-sidebar
+    ...
+    class='<class name>'
+    isOpen=<true/false>
+    content=(component '<component name>')
+    onToggle=<action>
+    label=(component '<component name>')
+    ...
+  }}
+{{ END-SNIPPET --}}
+
+<div class='addon-demo-api'>
+  <div class='addon-demo-title'>
+    Notes
+  </div>
+  <div class='addon-demo-notes'>
+    <p>
+      Pass in a label component to show beside the sidebar button.
+    </p>
+  </div>
+  <div class='addon-demo-title'>
+    API
+  </div>
+  <div class='addon-demo-snippet'>
+    {{code-snippet name='label-api.hbs'}}
+  </div>
+</div>
+<div class='addon-demo-live'>
+  <div class='addon-demo-title'>
+    Live demo
+  </div>
+  <div class='addon-demo-snippet'>
+    {{code-snippet name='label-frost-sidebar.hbs'}}
+  </div>
+  <div class='addon-demo-component'>
+    {{! BEGIN-SNIPPET label-frost-sidebar }}
+    {{frost-sidebar
+      content=(component 'simple-content' sentences=sentences)
+      onToggle=(action 'onToggle')
+      isOpen=isOpen
+      label=(component 'map-label')
+    }}
+    {{! END-SNIPPET }}
+  </div>
+</div>

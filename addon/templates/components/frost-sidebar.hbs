@@ -17,7 +17,7 @@
       {{#if label}}
         <div class="frost-sidebar-button-label">
           {{component label
-            hook='frost-sidebar-button-label'
+            hook=(concat hook '-sidebar-button-label')
           }}
         </div>
       {{/if}}
