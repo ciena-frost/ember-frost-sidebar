@@ -1,9 +1,8 @@
 import Ember from 'ember'
-const {Component} = Ember
+const {Component, typeOf} = Ember
 import layout from '../templates/components/frost-sidebar'
 import computed, {readOnly} from 'ember-computed-decorators'
 import PropTypesMixin, {PropTypes} from 'ember-prop-types'
-import {validators} from 'ember-prop-types/utils/prop-types'
 
 export default Component.extend(PropTypesMixin, {
   // == Component properties ==================================================
@@ -33,6 +32,6 @@ export default Component.extend(PropTypesMixin, {
   @readOnly
   @computed('label')
   isLabelComponent (label) {
-    return validators.EmberComponent(null, 'label', label, null, false, false)
+    return typeOf(label) !== 'string'
   }
 })
