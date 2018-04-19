@@ -1,3 +1,7 @@
+# 8.1.0 (2018-04-19)
+
+* Added `label` prop
+
 # 8.0.0 (2018-04-13)
 
 * Upgraded `ember-frost-core` to ^8.0.0
