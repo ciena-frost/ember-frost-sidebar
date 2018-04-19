@@ -1,7 +1,9 @@
 import Ember from 'ember'
 const {Component} = Ember
 import layout from '../templates/components/frost-sidebar'
+import computed, {readOnly} from 'ember-computed-decorators'
 import PropTypesMixin, {PropTypes} from 'ember-prop-types'
+import {validators} from 'ember-prop-types/utils/prop-types'
 
 export default Component.extend(PropTypesMixin, {
   // == Component properties ==================================================
@@ -17,9 +19,20 @@ export default Component.extend(PropTypesMixin, {
       PropTypes.object,
       PropTypes.EmberObject
     ]).isRequired,
-    label: PropTypes.EmberComponent,
+    label: PropTypes.oneOfType([
+      PropTypes.EmberComponent,
+      PropTypes.string
+    ]),
 
     // Actions
     onToggle: PropTypes.func.isRequired
+  },
+
+  // == Computed Properties ===================================================
+
+  @readOnly
+  @computed('label')
+  isLabelComponent (label) {
+    return validators.EmberComponent(null, 'label', label, null, false, false)
   }
 })

@@ -5,7 +5,7 @@
     isOpen=<true/false>
     content=(component '<component name>')
     onToggle=<action>
-    label=(component '<component name>')
+    label=(component '<component name>') // or string e.g. 'foo'
     ...
   }}
 {{ END-SNIPPET --}}
@@ -16,7 +16,7 @@
   </div>
   <div class='addon-demo-notes'>
     <p>
-      Pass in a label component to show beside the sidebar button.
+      Pass in a string or component to the label prop to show beside the sidebar button when it is collapsed.
     </p>
   </div>
   <div class='addon-demo-title'>
@@ -31,15 +31,32 @@
     Live demo
   </div>
   <div class='addon-demo-snippet'>
-    {{code-snippet name='label-frost-sidebar.hbs'}}
+    <i>Label component</i>  
+    {{code-snippet name='label-component-frost-sidebar.hbs'}}
   </div>
   <div class='addon-demo-component'>
-    {{! BEGIN-SNIPPET label-frost-sidebar }}
+    {{! BEGIN-SNIPPET label-component-frost-sidebar }}
     {{frost-sidebar
-      content=(component 'simple-content' sentences=sentences)
-      onToggle=(action 'onToggle')
-      isOpen=isOpen
+      content=(component 'simple-content'
+              sentences=sentences)
+      onToggle=(action 'onToggle1')
+      isOpen=isOpen1
       label=(component 'map-label')
+    }}
+    {{! END-SNIPPET }}
+  </div>
+  <div class='addon-demo-snippet'>
+    <i>String label</i>  
+    {{code-snippet name='string-label-frost-sidebar.hbs'}}
+  </div>
+  <div class='addon-demo-component'>
+    {{! BEGIN-SNIPPET string-label-frost-sidebar }}
+    {{frost-sidebar
+      content=(component 'simple-content'
+              sentences=sentences)
+      onToggle=(action 'onToggle2')
+      isOpen=isOpen2
+      label='Map Details'
     }}
     {{! END-SNIPPET }}
   </div>

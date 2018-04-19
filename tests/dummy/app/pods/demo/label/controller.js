@@ -5,10 +5,14 @@ const {
 
 export default Controller.extend({
   sentences: ['I\'m loooooooooooooggggg content'],
-  isOpen: false,
+  isOpen1: false,
+  isOpen2: false,
   actions: {
-    onToggle () {
-      this.toggleProperty('isOpen')
+    onToggle1 () {
+      this.toggleProperty('isOpen1')
+    },
+    onToggle2 () {
+      this.toggleProperty('isOpen2')
     }
   }
 })

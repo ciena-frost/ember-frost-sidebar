@@ -16,9 +16,13 @@
     <div class="frost-sidebar-button" {{action onToggle}} data-test={{hook (concat hook '-sidebar-button')}} role="button">
       {{#if label}}
         <div class="frost-sidebar-button-label">
-          {{component label
-            hook=(concat hook '-sidebar-button-label')
-          }}
+          {{#if isLabelComponent}}
+            {{component label
+              hook=(concat hook '-sidebar-button-label')
+            }}
+          {{else}}
+            {{label}}
+          {{/if}}
         </div>
       {{/if}}
       {{frost-icon class="frost-sidebar-button-icon" icon="layer-normal" pack='frost-sidebar'}}
