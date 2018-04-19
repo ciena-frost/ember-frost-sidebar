@@ -13,6 +13,7 @@ Router.map(function () {
     this.route('content')
     this.route('size')
     this.route('dynamic-updates')
+    this.route('label')
   })
 })
 
